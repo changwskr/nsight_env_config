@@ -33,26 +33,20 @@ spring:
     active: prod
 
   session:
-    store-type: redis
+    store-type: jdbc
     timeout: 60m
-    redis:
-      namespace: nsight:mp:session
-      flush-mode: on_save
-      save-mode: on_set_attribute
-
-  data:
-    redis:
-      host: 10.10.50.10
-      port: 6379
-      timeout: 3s
-      lettuce:
-        pool:
-          max-active: 50
-          max-idle: 20
-          min-idle: 5
-          max-wait: 3s
+    jdbc:
+      initialize-schema: never
+      table-name: SPRING_SESSION
+      cleanup-cron: "0 */10 * * * *"
+    flush-mode: on_save
+    save-mode: on_set_attribute
 
   datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@10.10.50.20:1521/NSIGHT
+    username: nsight
+    password: CHANGEME
     hikari:
       pool-name: nsight-hikari
       maximum-pool-size: 50

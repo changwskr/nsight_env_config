@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Session: Spring Session JDBC (shared DB). Tomcat DeltaManager/PersistentManager 미사용 -->
 <Context path="/customer"
          docBase="/app/nsight/customer/customer-service.war"
          reloadable="false"

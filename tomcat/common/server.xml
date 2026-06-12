@@ -2,7 +2,7 @@
 <!-- ==========================================================
      NSIGHT Marketing Platform - Tomcat server.xml
      Service별 Tomcat에 동일 적용, jvmRoute만 서버별로 변경 가능
-     Session sharing: Spring Session Redis
+     Session sharing: Spring Session JDBC (shared DB)
      DeltaManager: Not used
      ========================================================== -->
 
@@ -39,7 +39,7 @@
                    server="NSIGHT-Tomcat"
                    redirectPort="8443" />
 
-        <!-- jvmRoute is optional when Redis session is used.
+        <!-- jvmRoute is optional when DB-backed Spring Session is used.
              Set unique value only if Apache sticky routing is required. -->
         <Engine name="Catalina" defaultHost="localhost" jvmRoute="${JVM_ROUTE}">
 
