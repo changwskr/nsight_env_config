@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/support"
+         docBase="/app/nsight/support/support-service.war"
+         reloadable="false"
+         sessionCookieName="NSIGHTSESSION">
+</Context>
